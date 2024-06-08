@@ -2,9 +2,6 @@ const {
 	Interaction,
 	Client,
 	SlashCommandBuilder,
-	ButtonBuilder,
-	ButtonStyle,
-	ActionRowBuilder,
 	EmbedBuilder,
 } = require("discord.js")
 require("dotenv").config()
@@ -47,21 +44,10 @@ module.exports = {
 				iconURL: interaction.user.displayAvatarURL(),
 			})
 
-		// Create a new button
-		const helpButton = new ButtonBuilder()
-			.setStyle(ButtonStyle.Success)
-			.setCustomId("help")
-			.setLabel("Need help?")
-			.setEmoji("❓")
-
-		// Create a new action row
-		const row = new ActionRowBuilder().addComponents(helpButton)
-
 		// Edit the reply to include the embed and the button
 		await interaction.editReply({
 			content: "",
 			embeds: [embed],
-			components: [row],
 		})
 	},
 }
