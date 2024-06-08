@@ -1,0 +1,21 @@
+{
+	"name": "my-discord-bot",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"register": "node deploy-commands.js",
+		"dev": "node index.js",
+		"start": "npm run register && node index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"discord.js": "^14.15.3",
+		"dotenv": "^16.4.5",
+		"mongoose": "^8.4.1",
+		"node-html-to-image": "^4.0.0",
+		"uuid": "^9.0.1"
+	}
+}
