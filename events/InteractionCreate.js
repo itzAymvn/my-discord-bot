@@ -4,9 +4,11 @@ const {
 	Interaction,
 	Client,
 } = require("discord.js")
-const help = require("../interactions/buttons/help")
+
+// Example Button Interaction
 const example = require("../interactions/buttons/example")
 
+// Function to get the permission name
 function getPermissionName(permission) {
 	for (const perm of Object.keys(PermissionsBitField.Flags)) {
 		if (PermissionsBitField.Flags[perm] === permission) {
