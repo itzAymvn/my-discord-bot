@@ -7,6 +7,8 @@ const {
 
 // Example Button Interaction
 const example = require("../interactions/buttons/example")
+const avatar = require("../interactions/buttons/avatar")
+const banner = require("../interactions/buttons/banner")
 
 // Function to get the permission name
 function getPermissionName(permission) {
@@ -29,8 +31,24 @@ module.exports = {
 		const { customId } = interaction
 
 		if (interaction.isButton()) {
-			if (customId === "help") {
-				return example.execute(interaction, client)
+			if (customId.startsWith("get_avatar")) {
+				const userId = customId.split("_")[2]
+				if (!userId) return
+
+				const user = await client.users.fetch(userId)
+				if (!user) return
+
+				return avatar.execute(interaction, client, user)
+			}
+
+			if (customId.startsWith("get_banner")) {
+				const userId = customId.split("_")[2]
+				if (!userId) return
+
+				const user = await client.users.fetch(userId, { force: true })
+				if (!user) return
+
+				return banner.execute(interaction, client, user)
 			}
 		}
 
