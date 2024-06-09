@@ -12,7 +12,6 @@ A Discord bot with various utilities and features built using JavaScript.
 ## Prerequisites
 
 -   Node.js
--   pnpm
 -   A Discord bot token
 
 ## Installation
@@ -27,7 +26,7 @@ A Discord bot with various utilities and features built using JavaScript.
     ```
 3. Install dependencies:
     ```bash
-    pnpm install
+    npm install
     ```
 4. Set up your environment variables:
     - Copy `.env.example` to `.env` and fill in the required values.
@@ -37,7 +36,7 @@ A Discord bot with various utilities and features built using JavaScript.
 Start the bot:
 
 ```bash
-pnpm start
+npm start
 ```
 
 ## Contributing
