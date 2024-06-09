@@ -6,7 +6,6 @@ const {
 } = require("discord.js")
 
 // Example Button Interaction
-const example = require("../interactions/buttons/example")
 const avatar = require("../interactions/buttons/avatar")
 const banner = require("../interactions/buttons/banner")
 
