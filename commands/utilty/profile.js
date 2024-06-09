@@ -58,32 +58,31 @@ module.exports = {
 
 		// Create the embed
 		const embed = new EmbedBuilder()
-			.setTitle("User Profile")
+			.setTitle("📋 User Profile")
 			.setColor("#5865F2")
 			.setThumbnail(user.displayAvatarURL({ dynamic: true }))
 			.addFields(
 				{
-					name: "• Username",
+					name: "👤 Username",
 					value: `\`\`\`${user.tag}\`\`\``,
 				},
 				{
-					name: "• ID",
+					name: "🆔 User ID",
 					value: `\`\`\`${user.id}\`\`\``,
 				},
 				{
-					name: "• Account Age",
+					name: "📅 Created Account",
 					value: `<t:${Math.floor(user.createdTimestamp / 1000)}:R>`,
 				}
 			)
 
-		// If the user is in the guild, add the member since field
+		// If the user is in the guild, add the "joined server" field
 		if (guildMember) {
 			embed.addFields({
-				name: "Member Since",
+				name: "📥 Joined Server",
 				value: `<t:${Math.floor(
 					guildMember.joinedTimestamp / 1000
 				)}:R>`,
-				inline: true,
 			})
 		}
 

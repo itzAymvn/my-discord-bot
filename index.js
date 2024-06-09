@@ -88,12 +88,16 @@ const loadCommands = () => {
 
 // Connect to the database and initialize the bot
 connectToDatabase().then(() => {
-	console.log("[INFO] Connected to the database")
+	try {
+		console.log("[INFO] Connected to the database")
 
-	// Log in the bot
-	client.login(process.env.DISCORD_BOT_TOKEN)
+		// Log in the bot
+		client.login(process.env.DISCORD_BOT_TOKEN)
 
-	// Load events and commands
-	loadEvents()
-	loadCommands()
+		// Load events and commands
+		loadEvents()
+		loadCommands()
+	} catch (error) {
+		console.error(`[ERROR] ${error.message}`)
+	}
 })
