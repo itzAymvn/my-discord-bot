@@ -10,7 +10,7 @@ module.exports = {
 	 * @param {Client} client - The Discord client.
 	 */
 	execute(client) {
-		const totalServers = client.guilds.cache.size
+		const totalServers = client?.guilds?.cache?.size || 0
 		const totalServersText = `over ${totalServers} server${
 			totalServers === 1 ? "" : "s"
 		}`
